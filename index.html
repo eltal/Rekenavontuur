@@ -3,18 +3,37 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Reken Avontuur - Groep 7</title>
+    <title>Reken Avontuur v2</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🧠 Reken Avontuur</h1>
-        <p>Kies het juiste antwoord!</p>
+<div class="container">
+    <h1>🧠 Reken Avontuur</h1>
+    <div id="setup-screen">
+        <p>Kies een avatar:</p>
+        <select id="avatar-select">
+            <option value="🦊">🦊 Vos</option>
+            <option value="🐸">🐸 Kikker</option>
+            <option value="🐱">🐱 Kat</option>
+        </select><br><br>
+        <p>Kies een onderwerp:</p>
+        <select id="topic-select">
+            <option value="optellen">Optellen</option>
+            <option value="tafels">Tafels</option>
+            <option value="breuken">Breuken</option>
+        </select><br><br>
+        <button onclick="startGame()">Start avontuur</button>
+    </div>
+
+    <div id="game-screen" style="display:none;">
+        <p>Avatar: <span id="avatar-display"></span> | Punten: <span id="score">0</span></p>
+        <p id="timer">⏱️ 10</p>
         <div id="question-container"></div>
         <div id="options-container"></div>
         <div id="feedback"></div>
         <button onclick="generateQuestion()">Volgende vraag</button>
     </div>
-    <script src="script.js"></script>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
